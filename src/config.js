@@ -1,4 +1,5 @@
 
+export const backendBaseUrl = process.env.REACT_APP_BACKEND_BASE_URL;
 
 export const quireBaseUrl = process.env.REACT_APP_API_BASE_URL;
 export const clientID = process.env.REACT_APP_CLIENT_ID;
@@ -14,7 +15,7 @@ export const appBaseUrl = process.env.REACT_APP_FRONTEND_URL;
 export const MRN_JWT_COOKIE = "mrn_jwt";
 export const COMPANY_DATA_COOKIE = "company_data";
 export const EMPLOYEE_DATA_COOKIE = "employee_data";
-export const QUIRE_AUTHORIZATION_CODE = "quire_authorization_code";
+export const QUIRE_ACCESS_TOKEN = "QUIRE_ACCESS_TOKEN";
 
 export const qParams = () => [
   `client_id=${clientID}`,
@@ -25,8 +26,8 @@ export const authenticationUrl = `${quireBaseUrl}/oauth?${(qParams())}`;
 
 
 const endpoints = {
-  users_list: "users/index",
-  user_show: "users/show/:id",
+  retreive_token: "retireve_acces_token",
+  tasks_of_project: "task/list/id/:id",
   user_company_show: "users/:id/:company_id",
   post_show: "posts/:id",
   contracts_new: "contracts",
@@ -80,7 +81,7 @@ const endpoints = {
 };
 
 export function getApiUrl({
-  endpoint, pathParams = {}, queryParams = {}, version = "v1", baseUrl = quireBaseUrl,
+  endpoint, pathParams = {}, queryParams = {}, baseUrl = quireBaseUrl,
 }) {
   let apiUrl = endpoints[endpoint];
   if (!apiUrl) throw new Error("Unknown endpoint given to 'getApiUrl' function");
@@ -90,7 +91,7 @@ export function getApiUrl({
   }
   // eslint-disable-next-line no-use-before-define
   apiUrl = apiUrlWithQueryParams(apiUrl, queryParams);
-  return [baseUrl, version, apiUrl].filter((item) => item).join("/");
+  return [baseUrl, apiUrl].filter((item) => item).join("/");
 }
 
 export const apiUrlWithQueryParams = (apiUrl, queryParams) => {
