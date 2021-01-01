@@ -27,7 +27,7 @@ export const authenticationUrl = `${quireBaseUrl}/oauth?${(qParams())}`;
 
 const endpoints = {
   retreive_token: "retireve_acces_token",
-  tasks_of_project: "task/list/id/:id",
+  tasks_of_project: "tasks",
   user_company_show: "users/:id/:company_id",
   post_show: "posts/:id",
   contracts_new: "contracts",
@@ -81,7 +81,7 @@ const endpoints = {
 };
 
 export function getApiUrl({
-  endpoint, pathParams = {}, queryParams = {}, baseUrl = quireBaseUrl,
+  endpoint, pathParams = {}, queryParams = {}, baseUrl = backendBaseUrl,
 }) {
   let apiUrl = endpoints[endpoint];
   if (!apiUrl) throw new Error("Unknown endpoint given to 'getApiUrl' function");

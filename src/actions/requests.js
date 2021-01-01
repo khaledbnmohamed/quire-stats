@@ -16,15 +16,10 @@ export const userAccessToken = async (queryParams) => {
 };
 
 
-export const getTasksOfProject = async (pathParams) => {
-  const url = getApiUrl({ endpoint: "tasks_of_project", pathParams});
-  const headers = {
-    Authorization: 'Bearer ' + Cookies.get(QUIRE_ACCESS_TOKEN),
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-  };
-
-  const response = await axios.get(url, { headers,withCredentials: true, crossDomain: true })
+export const getTasksOfProject = async (queryParams) => {
+  queryParams = {...queryParams, user_token: Cookies.get(QUIRE_ACCESS_TOKEN) }
+  const url = getApiUrl({ endpoint: "tasks_of_project", queryParams});
+  const response = await axios.get(url)
     .then((res) => ({ data: res.data }))
     .catch((error) => ({ data: error, hasError: true }));
   return response;

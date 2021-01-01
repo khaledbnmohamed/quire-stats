@@ -6,10 +6,12 @@ import { callBackUrl } from "../../config";
 const LoginCallback = lazy(() => import("./LoginCallback"));
 const Home = lazy(() => import("./Home"));
 const AllTasks = lazy(() => import("./AllTasks"));
+const LandingPage = lazy(() => import("../LandingPage"));
 
 const GuestLayout = () => (
   <Suspense fallback={"loading"}>
     <Switch>
+    <Route exact path={`/`} component={LandingPage} />
      <Route exact path={`/${callBackUrl}`} component={LoginCallback} />
       <Route exact path={`/home`} component={Home} />
       <Route exact path={`/tasks`} component={AllTasks} />
