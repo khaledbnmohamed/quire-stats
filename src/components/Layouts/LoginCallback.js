@@ -15,10 +15,10 @@ const LoginCallback = () => {
       const callbackParams = queryString.parse(url);
       const response = await userAccessToken({code: callbackParams["code"]})
       Cookies.set(QUIRE_ACCESS_TOKEN, response.data.access_token);
-      history.push({ pathname: "/home"})
+      history.push({ pathname: "/projects"})
     }
     getUserToken()
-  }, []);
+  }, [history]);
 
   return (
     <p/>

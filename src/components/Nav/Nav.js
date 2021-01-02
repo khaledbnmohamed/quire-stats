@@ -4,7 +4,7 @@ function Nav() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light static-top header-a">
             <div className="container nav-container">
-                <a className="navbar-brand brand" href="#">Blinguage</a>
+                <a className="navbar-brand brand" href="/">Quire Statistics</a>
 
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -25,13 +25,12 @@ function Nav() {
                         </li>
 
                         <li className="nav-item active">
-                            <a className="nav-link" href="#">Why Us <span className="sr-only">(current)</span></a>
+                            <a className="nav-link" href="/projects">Projects <span className="sr-only">(current)</span></a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Support</a>
+                            <a className="nav-link" href="/tasks">Tasks</a>
                         </li>
 
-                        <a className="btn btn-outline-dark start" href="#">Get Started</a>
 
                     </ul>
 

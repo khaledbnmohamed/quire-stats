@@ -28,7 +28,7 @@ export const authenticationUrl = `${quireBaseUrl}/oauth?${(qParams())}`;
 const endpoints = {
   retreive_token: "retireve_acces_token",
   tasks_of_project: "tasks",
-  user_company_show: "users/:id/:company_id",
+  projects: "projects",
   post_show: "posts/:id",
   contracts_new: "contracts",
   contract_show: "contracts/:number",
