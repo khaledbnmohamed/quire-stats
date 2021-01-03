@@ -29,7 +29,7 @@ const endpoints = {
   retreive_token: "retireve_acces_token",
   tasks_of_project: "tasks",
   projects: "projects",
-  post_show: "posts/:id",
+  daily_overview: "tasks/daily_overview",
   contracts_new: "contracts",
   contract_show: "contracts/:number",
   contract_edit: "contracts/:number",

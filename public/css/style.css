@@ -121,13 +121,13 @@
 
 .footer {
     color: white;
-    text-align: center;
+    text-align: start;
     background-color: #212529;
-    padding-top: 25px;
+    padding-top: 0rem;
     color: white;
     position: absolute;
     bottom: 0;
-    height: 100px;
+    height: 40px;
     width: 100%;
 }
 

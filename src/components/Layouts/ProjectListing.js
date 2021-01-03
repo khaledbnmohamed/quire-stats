@@ -44,7 +44,7 @@ const ProjectListing = () => {
                   <br />
               </CardContent>
               <CardActions>
-                <Button size="small" href={`/tasks/${project.quire_id}`}>Learn More</Button>
+                <Button size="small" href={`/${project.quire_id}/daily_overview`}>Learn More</Button>
               </CardActions>
 
           </Card>
